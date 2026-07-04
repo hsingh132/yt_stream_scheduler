@@ -14,16 +14,23 @@ from auth import get_youtube_client
 from broadcast import BroadcastPlan
 
 
-def find_or_create_playlist(youtube, playlist_name: str) -> str:
-    print(f"[youtube] Looking for existing playlist: {playlist_name}")
+def find_playlist(youtube, playlist_name: str) -> str | None:
     request = youtube.playlists().list(part="snippet", mine=True, maxResults=50)
     while request is not None:
         response = request.execute()
         for item in response.get("items", []):
             if item["snippet"]["title"] == playlist_name:
-                print(f"[youtube]   Found existing playlist: {item['id']}")
                 return item["id"]
         request = youtube.playlists().list_next(request, response)
+    return None
+
+
+def find_or_create_playlist(youtube, playlist_name: str) -> str:
+    print(f"[youtube] Looking for existing playlist: {playlist_name}")
+    existing_id = find_playlist(youtube, playlist_name)
+    if existing_id:
+        print(f"[youtube]   Found existing playlist: {existing_id}")
+        return existing_id
 
     print(f"[youtube]   Not found, creating playlist: {playlist_name}")
     response = youtube.playlists().insert(

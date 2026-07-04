@@ -1,0 +1,25 @@
+name: Daily samagam stream check
+
+on:
+  schedule:
+    - cron: "0 13 * * *"  # once a day, 1pm UTC
+  workflow_dispatch: {}  # lets you trigger a run manually from the Actions tab
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Write credentials from secrets
+        run: |
+          echo '${{ secrets.YT_CLIENT_SECRET }}' > client_secret.json
+          echo '${{ secrets.YT_TOKEN }}' > token.json
+
+      - run: python main.py
