@@ -1,0 +1,40 @@
+city,state,country,start_date,end_date,timezone
+Mexico City,MX,Mexico,2026-01-16,2026-01-19,America/Mexico_City
+Melbourne,AU,Australia,2026-01-22,2026-01-26,Australia/Melbourne
+Fort Lauderdale,FL,USA,2026-01-30,2026-02-01,America/New_York
+Albuquerque,NM,USA,2026-01-30,2026-02-01,America/Denver
+Dallas,TX,USA,2026-02-13,2026-02-16,America/Chicago
+Sacramento,CA,USA,2026-02-27,2026-03-01,America/Los_Angeles
+Ventura,CA,USA,2026-03-13,2026-03-15,America/Los_Angeles
+Dodra,Punjab,India,2026-03-21,2026-03-28,Asia/Kolkata
+Southington,CT,USA,2026-04-03,2026-04-05,America/New_York
+Manchester,UK,United Kingdom,2026-04-17,2026-04-19,Europe/London
+Detroit,MI,USA,2026-04-24,2026-04-26,America/Detroit
+Montreal,QC,Canada,2026-05-01,2026-05-03,America/Toronto
+Porterville,CA,USA,2026-05-01,2026-05-03,America/Los_Angeles
+Winnipeg,MB,Canada,2026-05-15,2026-05-18,America/Winnipeg
+Fairfax,VA,USA,2026-05-22,2026-05-25,America/New_York
+Doraha,Punjab,India,2026-05-30,2026-06-06,Asia/Kolkata
+Los Angeles,CA,USA,2026-06-12,2026-06-14,America/Los_Angeles
+San Antonio,TX,USA,2026-06-19,2026-06-21,America/Chicago
+Edmonton,AB,Canada,2026-06-26,2026-06-28,America/Edmonton
+San Francisco,CA,USA,2026-07-02,2026-07-05,America/Los_Angeles
+Sydney,AU,Australia,2026-07-08,2026-07-12,Australia/Sydney
+Houston,TX,USA,2026-07-17,2026-07-19,America/Chicago
+Vancouver,BC,Canada,2026-07-31,2026-08-03,America/Vancouver
+Carteret,NJ,USA,2026-07-31,2026-08-02,America/New_York
+Rockville,MD,USA,2026-08-14,2026-08-16,America/New_York
+Boston,MA,USA,2026-08-28,2026-08-30,America/New_York
+Seattle,WA,USA,2026-09-04,2026-09-07,America/Los_Angeles
+Toronto,ON,Canada,2026-09-04,2026-09-07,America/Toronto
+Atlanta,GA,USA,2026-09-18,2026-09-20,America/New_York
+Dodra,Punjab,India,2026-09-26,2026-10-03,Asia/Kolkata
+Calgary,AB,Canada,2026-10-09,2026-10-12,America/Edmonton
+Ottawa,ON,Canada,2026-10-09,2026-10-12,America/Toronto
+Hastings,NZ,New Zealand,2026-10-23,2026-10-25,Pacific/Auckland
+Cleveland,OH,USA,2026-10-23,2026-10-25,America/New_York
+New York,NY,USA,2026-10-30,2026-11-01,America/New_York
+Austin,TX,USA,2026-11-13,2026-11-15,America/Chicago
+Las Vegas,NV,USA,2026-11-26,2026-11-29,America/Los_Angeles
+Durham,NC,USA,2026-12-11,2026-12-13,America/New_York
+Dodra,Punjab,India,2026-12-20,2026-12-30,Asia/Kolkata
