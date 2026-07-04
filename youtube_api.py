@@ -73,8 +73,12 @@ def create_broadcast(youtube, plan: BroadcastPlan) -> str:
                 "selfDeclaredMadeForKids": plan.made_for_kids,
             },
             "contentDetails": {
-                "enableAutoStart": True,
-                "enableAutoStop": True,
+                # Off on purpose: going live/ending is controlled by an
+                # explicit trigger elsewhere, not by YouTube's own stream
+                # health detection (which would end the broadcast on a
+                # brief OBS disconnect, not just a real stop).
+                "enableAutoStart": False,
+                "enableAutoStop": False,
                 "enableDvr": True,
                 "latencyPreference": plan.latency_preference,
             },
