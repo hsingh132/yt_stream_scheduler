@@ -80,6 +80,7 @@ def create_broadcast(youtube, plan: BroadcastPlan) -> str:
                 "enableAutoStart": False,
                 "enableAutoStop": False,
                 "enableDvr": True,
+                "enableLiveChat": plan.enable_live_chat,
                 "latencyPreference": plan.latency_preference,
             },
         },

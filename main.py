@@ -16,6 +16,7 @@ from scheduler import load_samagams, get_next_samagam
 from thumbnail import generate_thumbnail
 from broadcast import build_broadcast_plans, future_plans, build_playlist_name
 from youtube_api import create_streams_for_samagam, find_playlist
+from manifest import save_manifest
 
 DAYS_BEFORE_THRESHOLD = 2
 
@@ -47,6 +48,9 @@ def main() -> None:
 
     print(f"\n{len(plans)} session(s) to create...\n")
     results = create_streams_for_samagam(plans, thumbnail_path)
+
+    save_manifest(results)
+    print("\nSaved live_manifest.json for the start/stop trigger.")
 
     print("\n=== SUMMARY ===")
     print(f"Samagam: {samagam.label}")
