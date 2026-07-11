@@ -3,3 +3,4 @@ token.json
 __pycache__/
 .idea/
 thumbnails/
+live_manifest.json
