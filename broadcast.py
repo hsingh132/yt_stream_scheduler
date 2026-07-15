@@ -32,6 +32,11 @@ FRAME_RATE = "variable"
 DESCRIPTION = ""
 BROADCAST_TYPE = "streaming_software"  # RTMP/encoder ingestion, not webcam/mobile
 
+# Desired chat/interaction settings. NOTE: none of these are enforceable
+# through the YouTube Data API - it exposes no fields for them (the old
+# enableLiveChat field was removed and is silently ignored if sent).
+# They document intent only; each must be set by hand in YouTube Studio
+# after the broadcasts are created.
 ENABLE_LIVE_CHAT = False
 ENABLE_LIVE_CHAT_REPLAY = False
 ENABLE_LIVE_CHAT_SUMMARY = False

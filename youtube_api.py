@@ -85,7 +85,11 @@ def create_broadcast(youtube, plan: BroadcastPlan) -> str:
                 "enableAutoStart": False,
                 "enableAutoStop": False,
                 "enableDvr": True,
-                "enableLiveChat": plan.enable_live_chat,
+                # Live chat CANNOT be disabled through this API: the old
+                # enableLiveChat field was removed and is silently ignored
+                # if sent (verified empirically on insert and update).
+                # Chat must be turned off by hand in YouTube Studio for
+                # each broadcast after creation.
                 "latencyPreference": plan.latency_preference,
             },
         },
