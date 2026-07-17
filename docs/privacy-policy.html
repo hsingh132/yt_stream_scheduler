@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - Samagam Stream Scheduler</title>
+<style>
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.1rem; margin-top: 2rem; }
+  footer { margin-top: 3rem; color: #666; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy - Samagam Stream Scheduler</h1>
+<p><em>Last updated: 2026-07-17</em></p>
+
+<p>
+Samagam Stream Scheduler is an internal automation tool built for and used by
+Gurdwara Sahib Brahm Bunga Dodra to manage YouTube live broadcasts for the
+organization's own YouTube channel. It is not a public-facing product and is
+not distributed to or used by anyone outside this organization.
+</p>
+
+<h2>What it does</h2>
+<p>
+The tool reads a schedule of upcoming samagams and, for the organization's own
+YouTube channel, automatically creates and configures scheduled live broadcasts,
+live streams, thumbnails, and playlists on that channel.
+</p>
+
+<h2>What data it accesses</h2>
+<p>
+The tool uses the YouTube Data API (<code>https://www.googleapis.com/auth/youtube</code>
+scope) to read and manage content belonging to the single, authorized YouTube
+channel it is connected to. It does not access, collect, or process data from
+any other Google account, YouTube channel, or individual user.
+</p>
+
+<h2>What data it stores</h2>
+<p>
+The tool stores an OAuth access/refresh token locally and, for its automated
+scheduled runs, as an encrypted secret in a private GitHub Actions configuration.
+This token is used solely to authenticate the tool's own API calls to the
+authorized channel. No viewer, subscriber, or third-party personal data is
+collected, stored, sold, or shared.
+</p>
+
+<h2>Data retention and deletion</h2>
+<p>
+The stored OAuth token can be revoked at any time by the channel owner via
+<a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions</a>,
+which immediately ends the tool's access.
+</p>
+
+<h2>Contact</h2>
+<p>
+Questions about this tool or this policy can be sent to
+<a href="mailto:singhharnoord@gmail.com">singhharnoord@gmail.com</a>.
+</p>
+
+<footer>
+  Source code: <a href="https://github.com/hsingh132/yt_stream_scheduler">github.com/hsingh132/yt_stream_scheduler</a>
+</footer>
+
+</body>
+</html>
