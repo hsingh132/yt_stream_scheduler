@@ -48,20 +48,10 @@ def overlaps(a: Samagam, b: Samagam) -> bool:
     return a.start_date <= b.end_date and b.start_date <= a.end_date
 
 
-def prompt_choice(a: Samagam, b: Samagam) -> Samagam:
-    print("Two samagams overlap in date range:")
-    print(f"  1) {a.label} ({a.start_date} - {a.end_date})")
-    print(f"  2) {b.label} ({b.start_date} - {b.end_date})")
-    while True:
-        choice = input("Select 1 or 2: ").strip()
-        if choice == "1":
-            return a
-        if choice == "2":
-            return b
-        print("Please enter 1 or 2.")
-
-
-def get_next_samagam(samagams: list[Samagam], today: date | None = None) -> Samagam:
+def get_next_samagams(samagams: list[Samagam], today: date | None = None) -> list[Samagam]:
+    """Returns the soonest upcoming samagam, plus any others chained to it
+    by overlapping date ranges (e.g. two events double-booked the same
+    weekend) - all of them get streamed rather than picking just one."""
     today = today or date.today()
 
     upcoming = sorted(
@@ -71,17 +61,21 @@ def get_next_samagam(samagams: list[Samagam], today: date | None = None) -> Sama
     if not upcoming:
         raise ValueError("No upcoming samagams found in CSV.")
 
-    if len(upcoming) == 1 or not overlaps(upcoming[0], upcoming[1]):
-        return upcoming[0]
-
-    return prompt_choice(upcoming[0], upcoming[1])
+    group = [upcoming[0]]
+    for samagam in upcoming[1:]:
+        if any(overlaps(samagam, g) for g in group):
+            group.append(samagam)
+        else:
+            break
+    return group
 
 
 def main() -> None:
     samagams = load_samagams()
-    next_samagam = get_next_samagam(samagams)
-    print(f"\nNext samagam: {next_samagam.label}")
-    print(f"Dates: {next_samagam.start_date} - {next_samagam.end_date}")
+    next_samagams = get_next_samagams(samagams)
+    for samagam in next_samagams:
+        print(f"\nNext samagam: {samagam.label}")
+        print(f"Dates: {samagam.start_date} - {samagam.end_date}")
 
 
 if __name__ == "__main__":
